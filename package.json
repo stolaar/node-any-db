@@ -1,32 +1,38 @@
 {
-  "name": "any-db",
+  "name": "any-db-postgres",
   "version": "2.2.1",
-  "description": "Database-agnostic connection pooling, querying, and result sets",
+  "description": "The postgres adapter for any-db",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js",
-    "lerna": "lerna"
+    "test": "standard && test-any-db-adapter",
+    "debug": "node debug `which test-any-db-adapter`"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/grncdr/node-any-db.git"
+    "url": "git+https://github.com/grncdr/node-any-db-postgres.git"
   },
-  "author": "Stephen Sugden",
+  "bugs": {
+    "url": "https://github.com/grncdr/node-any-db-postgres/issues"
+  },
   "keywords": [
-    "mysql",
+    "any-db",
+    "anydb",
     "postgres",
     "pg",
-    "sqlite",
-    "sqlite3"
+    "adapter"
   ],
+  "author": "Stephen Sugden <me@stephensugden.com>",
   "license": "MIT",
   "dependencies": {
-    "any-db-pool": "~2.2.0",
-    "parse-db-url": "0.0.0"
+    "pg": "*",
+    "pg-query-stream": "~0.2.0",
+    "inherits": "~2.0.1"
+  },
+  "peerDependencies": {
+    "any-db": "^2.1.0"
   },
   "devDependencies": {
-    "any-db-fake": "0.0.1",
-    "lerna": "^2.11.0",
-    "tape": "~2.3.2"
+    "any-db-adapter-spec": "~2.1.0",
+    "standard": "*"
   }
 }
